@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-order-server/order-service-api/order-service-api.iml" filepath="$PROJECT_DIR$/spring-cloud-order-server/order-service-api/order-service-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-order-server/order-service-provider/order-service-provider.iml" filepath="$PROJECT_DIR$/spring-cloud-order-server/order-service-provider/order-service-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-config-server/spring-cloud-config-server.iml" filepath="$PROJECT_DIR$/spring-cloud-config-server/spring-cloud-config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-eureka-server/spring-cloud-eureka-server.iml" filepath="$PROJECT_DIR$/spring-cloud-eureka-server/spring-cloud-eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-netflix.iml" filepath="$PROJECT_DIR$/spring-cloud-netflix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-order-server/spring-cloud-order-server.iml" filepath="$PROJECT_DIR$/spring-cloud-order-server/spring-cloud-order-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-user-server/spring-cloud-user-server.iml" filepath="$PROJECT_DIR$/spring-cloud-user-server/spring-cloud-user-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-user-server/user-service-api/user-service-api.iml" filepath="$PROJECT_DIR$/spring-cloud-user-server/user-service-api/user-service-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-user-server/user-service-provider/user-service-provider.iml" filepath="$PROJECT_DIR$/spring-cloud-user-server/user-service-provider/user-service-provider.iml" />
+    </modules>
+  </component>
+</project>
