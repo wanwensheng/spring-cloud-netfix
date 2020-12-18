@@ -1,0 +1,5 @@
+org.springframework.cloud.bootstrap.BootstrapConfiguration=\
+  com.wan.sourceloader.JsonProperySourceLocator
+
+org.springframework.boot.env.PropertySourceLoader=\
+  com.wan.sourceloader.JsonPropertySourceLoader

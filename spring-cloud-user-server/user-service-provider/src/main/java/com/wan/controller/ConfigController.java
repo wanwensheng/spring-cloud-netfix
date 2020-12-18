@@ -23,4 +23,20 @@ public class ConfigController {
     public String config(){
         return txt;
     }
+
+    @Value("${custom.property.hello}")
+    private String hello;
+
+    @GetMapping("/configJson")
+    public String configJson(){
+        return hello;
+    }
+
+    @Value("${usernameTxt}")
+    private String usernameTxt;
+
+    @GetMapping("/configTxt")
+    public String configTxt(){
+        return usernameTxt;
+    }
 }
