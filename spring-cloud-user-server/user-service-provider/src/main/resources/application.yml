@@ -4,7 +4,7 @@ spring:
   application:
     name: user-service
   kafka:
-    bootstrap-servers: 192.168.40.152:9092
+    bootstrap-servers: 192.168.40.113:9092
     consumer:
       group-id: user-service
   cloud:
@@ -15,4 +15,34 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh
+        include: refresh,hystrix.stream
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:  #全局配置， feignclient#method(param)
+      execution:
+        timeout:
+          enable: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+    OrderServiceFeignClient#orders():
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          semaphore:
+            maxConcurrentRequests: 10
+    OrderServiceFeignClient#insert():
+      execution:
+        isolation:
+          strategy: THREAD
+  threadpool:
+    order-service:
+      coreSize: 2
+      maxQueueSize: 1000
+      queueSizeRejectionThreshold:  800
+ribbon:
+  readTimeout: 10000
+  connectTimeout: 10000

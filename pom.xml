@@ -22,6 +22,7 @@
         <module>spring-cloud-eureka-server</module>
         <module>spring-cloud-order-server</module>
         <module>spring-cloud-user-server</module>
+        <module>spring-cloud-hystrix-dashboard</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -41,5 +42,12 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

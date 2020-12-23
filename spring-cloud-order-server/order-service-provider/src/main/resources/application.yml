@@ -5,7 +5,7 @@ spring:
     bus:
       enabled: true
   kafka:
-    bootstrap-servers: 192.168.40.152:9092
+    bootstrap-servers: 192.168.40.113:9092
     consumer:
       group-id: order-service
 server:
