@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: spring-cloud-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: cookie_route
+        uri: http://www.baidu.com
+        predicates:
+        - Path=/cookie/**
+        - Cookie=mycookie,mycookievalue
+        filters:
+        - StripPrefix=1
+      - id: auth_route
+      #uri 可以直接指定某个服务地址 http://localhost:8082，我可以通过获取Eurake上的注册地址，必须是lb开头  lb://order-service
+        uri: lb://order-service
+        predicates:
+        - Path=/auth/**
+        - Auth=myAuth,myAuthValue
+        filters:
+        - StripPrefix=1
+        # 可以不传参数
+        - GpDefine=wanwensheng
+      - id: ratelimiter_route
+        predicates:
+        - Path=/ratelimiter/**
+        filters:
+        - StripPrefix=1
+        - name: RequestRateLimiter
+          args:
+            deny-empty-key: true
+            keyResolver: '#{@ipAddressKeyResolver}'
+            redis-rate-limiter.replenishRate: 1
+            redis-rate-limiter.burstCapacity: 2
+        uri: lb://order-service
+    discovery:
+      locator:
+        enable: true
+        lower-case-service-id: true
+  redis:
+    host: 192.168.40.208
+    port: 6379
+server:
+  port: 8888
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9090/eureka

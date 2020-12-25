@@ -23,6 +23,7 @@
         <module>spring-cloud-order-server</module>
         <module>spring-cloud-user-server</module>
         <module>spring-cloud-hystrix-dashboard</module>
+        <module>spring-cloud-gateway-server</module>
     </modules>
     <dependencyManagement>
         <dependencies>
