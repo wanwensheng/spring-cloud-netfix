@@ -21,6 +21,10 @@
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
+    <modules>
+        <module>user-service-api</module>
+        <module>user-service-provider</module>
+    </modules>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
